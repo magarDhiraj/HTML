@@ -1,0 +1,271 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My HTML Practical Page</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+
+    <div>
+        <h1>My HTML Practical page</h1>
+        <p>This page demonstrates different HTML tags.</p>
+
+        <a href="https://URL_About.com">About</a>
+        <a href="https://URL_Images.com">Images</a>
+        <a href="https://URL_Contact.com">Contact</a>
+    </div>
+
+    <div>
+        <h1>Heading 1</h1>
+        <h2>Heading 2</h2>
+        <h3>Heading 3</h3>
+        <h4>Heading 4</h4>
+        <h5>Heading 5</h5>
+        <h6>Heading 6</h6>
+
+        <p>This is a paragraph. HTML is used to create the structure of a webpage.</p>
+
+        <p>This is <b>bold text</b>.</p>
+        <p>This is <strong>important text</strong>.</p>
+        <p>This is <i>italic text</i>.</p>
+        <p>This is <em>emphasized text</em>.</p>
+        <p>This is <u>underlined text</u>.</p>
+        <p>This is <mark>highlighted text</mark>.</p>
+        <p>This is <small>small text</small>.</p>
+        <p>This is <del>deleted text</del>.</p>
+        <p>This is <ins>inserted text</ins>.</p>
+
+        <p>H<sub>2</sub>O</p>
+        <p>X<sup>2</sup></p>
+    </div>
+
+    <div>
+        <h1>Images</h1>
+
+        <img src="https://images.unsplash.com/photo-1500534623283-312aade485b7?w=800"
+             alt="Landscape placeholder image"
+             width="100"
+             height="100">
+    </div>
+
+    <div>
+        <h1>Lists</h1>
+
+            <p>Visit <a href="https://google.com">Google</a></p>
+            <p>Open in a new tab
+                <a href="https://github.com" target="_blank">Github</a>
+            </p>
+
+        <h1>Unordered List</h1>
+
+        <ul>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+        </ul>
+
+        <h1>Ordered List</h1>
+
+        <ol type="A">
+            <li>Open VS Code</li>
+            <li>Create HTML file</li>
+            <li>Write HTML code</li>
+            <li>Open in browser</li>
+        </ol>
+
+        <h1>Description List</h1>
+
+        <dl>
+            <dt>HTML</dt>
+            <dd>HyperText Markup Language</dd>
+
+            <dt>CSS</dt>
+            <dd>Cascading Style Sheets</dd>
+        </dl>
+    </div>
+
+    <div>
+        <h1>Div and Span</h1>
+
+        <p><b>Student Information</b></p>
+
+        <span>My name: John</span>
+        <br><br>
+
+        <table border="1">
+            <tr>
+                <th>Name</th>
+                <th>Subject</th>
+                <th>Marks</th>
+            </tr>
+
+            <tr>
+                <td>John</td>
+                <td>Maths</td>
+                <td>90</td>
+            </tr>
+
+            <tr>
+                <td>Sarab</td>
+                <td>Science</td>
+                <td>85</td>
+            </tr>
+
+            <tr>
+                <td>David</td>
+                <td>JavaScript</td>
+                <td>78</td>
+            </tr>
+
+            <tr>
+                <td colspan="2">Average</td>
+                <td>84.33</td>
+            </tr>
+        </table>
+    </div>
+
+    <div>
+        <h1>Student Registration</h1>
+
+        <form action="submit.php"
+              method="post"
+              enctype="multipart/form-data">
+
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <br><br>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <br><br>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <br><br>
+
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" required>
+            <br><br>
+
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob" required>
+            <br><br>
+
+            <label for="gender">Gender:</label>
+
+            <input type="radio" id="male" name="gender" value="male" required>
+            <label for="male">Male</label>
+
+            <input type="radio" id="female" name="gender" value="female" required>
+            <label for="female">Female</label>
+
+            <br><br>
+
+            <label for="skills">Skills:</label>
+
+            <input type="checkbox" id="html" name="skills" value="html">
+            <label for="html">HTML</label>
+
+            <input type="checkbox" id="css" name="skills" value="css">
+            <label for="css">CSS</label>
+
+            <input type="checkbox" id="javascript" name="skills" value="javascript">
+            <label for="javascript">JavaScript</label>
+
+            <br><br>
+
+            <label for="course">Choose Course:</label>
+
+            <select id="course" name="course" required>
+                <option value="">-- Select --</option>
+                <option value="computing">Computing</option>
+                <option value="software_engineering">Software Engineering</option>
+                <option value="web_development">Web Development</option>
+            </select>
+
+            <br><br>
+
+            <label for="message">Message:</label>
+            <br>
+
+            <textarea id="message"
+                      name="message"
+                      rows="5"
+                      cols="40"
+                      placeholder=""></textarea>
+
+            <br><br>
+
+            <label for="file">Upload File:</label>
+            <input type="file" id="file" name="file">
+
+            <br><br>
+
+            <input type="submit" value="Submit">
+            <input type="reset" value="Reset">
+
+        </form>
+    </div>
+
+    <div>
+        <h1>Quotation</h1>
+
+        <blockquote>
+            The best way to learn programming is by writing code.
+        </blockquote>
+
+        <p>Someone said: <q>Practice makes perfect.</q></p>
+    </div>
+
+    <div>
+        <h1>Code Example</h1>
+
+        <p>Example of HTML</p>
+
+        <pre><code>
+&lt;p&gt;Hello world&lt;/p&gt;
+This is
+preformatted
+text.
+        </code></pre>
+    </div>
+
+    <div>
+        <h1>Audio</h1>
+
+        <audio controls>
+            <source
+                src="https://commondatastorage.googleapis.com/codeskulptor-demos/riceracer_assets/fx/engine-5.ogg"
+                type="audio/ogg">
+
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+
+    <div>
+        <h1>Details and Summary</h1>
+
+        <details>
+            <summary>Click to learn about HTML</summary>
+
+            <p>
+                HTML stands for HyperText Markup Language.
+                It is used to structure content in a web browser.
+            </p>
+        </details>
+    </div>
+
+    <div>
+        <p>@2026 My HTML Practical Page</p>
+        <p>Created for HTML Practice</p>
+    </div>
+
+</body>
+</html>
+
