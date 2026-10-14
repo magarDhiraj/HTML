@@ -1,0 +1,1054 @@
+* { box-sizing: border-box; }
+
+:root {
+    color-scheme: light;
+    --ink: #171717;
+    --muted: #777;
+    --line: #e8e8e5;
+    --paper: #fff;
+    --soft: #f4f4f1;
+    --red: #cf3438;
+    --display: Impact, "Arial Narrow", sans-serif;
+    --body: "Trebuchet MS", Arial, sans-serif;
+}
+
+/* Makes padding and borders part of an element's declared size. */
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    color-scheme: light;
+    --ink: #171717;
+    --muted: #777;
+    --line: #e8e8e5;
+    --paper: #fff;
+    --soft: #f4f4f1;
+    --red: #cf3438;
+    --display: Impact, "Arial Narrow", sans-serif;
+    --body: "Trebuchet MS", Arial, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    color: var(--ink);
+    background: var(--paper);
+    font-family: var(--body);
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* Hides a label visually while keeping it available to screen readers. */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.announcement {
+    height: 29px;
+    overflow: hidden;
+    color: #fff;
+    background: var(--ink);
+}
+
+.announcement-track {
+    display: flex;
+    align-items: center;
+    width: max-content;
+    height: 100%;
+    animation: ticker 34s linear infinite;
+}
+
+.announcement-track span {
+    padding: 0 32px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.15px;
+    white-space: nowrap;
+}
+
+.announcement-track span:nth-child(3n + 2) {
+    color: #f2746f;
+}
+
+/* Moves the repeated announcement text continuously across the page. */
+@keyframes ticker {
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+.site-header {
+    min-height: 82px;
+    display: grid;
+    grid-template-columns: 1fr minmax(220px, 340px) 1fr;
+    align-items: center;
+    gap: 28px;
+    padding: 12px 4.2%;
+    border-bottom: 1px solid var(--line);
+}
+
+.wordmark {
+    width: max-content;
+    font-family: var(--display);
+    font-size: 28px;
+    line-height: .78;
+    letter-spacing: .2px;
+}
+
+.wordmark span {
+    display: block;
+    margin-top: 5px;
+    font-family: var(--body);
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 5px;
+    text-align: center;
+}
+
+.search {
+    display: flex;
+    height: 38px;
+    border: 1px solid #d8d8d5;
+}
+
+.search input {
+    width: 100%;
+    min-width: 0;
+    padding: 0 12px;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    font-size: 12px;
+}
+
+.search input::placeholder {
+    color: #888;
+}
+
+.search button {
+    width: 42px;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    font-size: 25px;
+    line-height: 1;
+}
+
+.header-actions {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 24px;
+}
+
+.header-actions a {
+    position: relative;
+    font-family: Arial, sans-serif;
+    font-size: 24px;
+    line-height: 1;
+}
+
+.bag-count {
+    position: absolute;
+    top: -6px;
+    right: -10px;
+    display: grid;
+    width: 15px;
+    height: 15px;
+    place-items: center;
+    border-radius: 50%;
+    background: var(--ink);
+    color: #fff;
+    font: 9px var(--body);
+}
+
+.main-nav {
+    min-height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 42px;
+    padding: 0 20px;
+    border-bottom: 1px solid var(--line);
+}
+
+.main-nav a {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .55px;
+    transition: color .18s ease;
+}
+
+.main-nav a:hover,
+.text-link:hover {
+    color: var(--red);
+}
+
+.main-nav .sale-link {
+    color: var(--red);
+}
+
+.hero {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    aspect-ratio: 2.8 / 1;
+    min-height: 360px;
+    background: #e9edf0;
+    color: #fff;
+}
+
+/* Adds a dark fade behind the text so it stays readable over the photo. */
+.hero::after {
+    position: absolute;
+    inset: 25% 0 0;
+    content: "";
+    background: linear-gradient(0deg, rgba(0, 0, 0, .58), transparent 75%);
+}
+
+.hero-media,
+.hero-media img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.hero-media img {
+    object-fit: cover;
+    object-position: center;
+}
+
+.hero-copy {
+    position: absolute;
+    z-index: 1;
+    left: 7%;
+    bottom: 9%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.eyebrow {
+    margin: 0;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.hero-copy strong {
+    margin: 8px 0 0;
+    font-family: var(--display);
+    font-size: 72px;
+    font-weight: 400;
+    line-height: .95;
+}
+
+.hero-tagline {
+    margin-top: 12px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    min-height: 44px;
+    padding: 0 22px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .8px;
+    transition: background .18s ease, color .18s ease;
+}
+
+.button-light {
+    margin-top: 20px;
+    color: var(--ink);
+    background: #fff;
+}
+
+.button-light:hover {
+    color: #fff;
+    background: var(--red);
+}
+
+.feature-intro {
+    padding: 71px 20px 36px;
+    text-align: center;
+}
+
+.feature-intro .eyebrow,
+.section-heading .eyebrow {
+    color: var(--red);
+}
+
+.feature-intro h1,
+.section-heading h2 {
+    margin: 9px 0 7px;
+    font-family: var(--display);
+    font-size: 38px;
+    font-weight: 400;
+    line-height: 1;
+}
+
+.feature-intro > p:last-child,
+.section-note {
+    margin: 0;
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.campaign-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    padding: 0 4.2%;
+}
+
+.campaign {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    aspect-ratio: 1.25 / 1;
+    background: var(--soft);
+    color: #fff;
+}
+
+/* Fades the bottom of each campaign image behind its white caption. */
+.campaign::after {
+    position: absolute;
+    inset: 25% 0 0;
+    content: "";
+    background: linear-gradient(0deg, rgba(0, 0, 0, .62), transparent 85%);
+}
+
+.campaign img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .55s cubic-bezier(.2, .7, .25, 1);
+}
+
+.campaign:hover img,
+.wide-campaign:hover img {
+    transform: scale(1.035);
+}
+
+.campaign-copy {
+    position: absolute;
+    z-index: 1;
+    left: 7%;
+    bottom: 8%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.campaign-copy strong {
+    margin: 8px 0 17px;
+    font-family: var(--display);
+    font-size: 42px;
+    font-weight: 400;
+}
+
+.text-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    width: max-content;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .6px;
+    transition: color .18s ease;
+}
+
+.campaign .text-link {
+    padding-bottom: 5px;
+    border-bottom: 1px solid currentColor;
+}
+
+.video-section {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 72px 4.2% 0;
+}
+
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+}
+
+.video-card {
+    min-width: 0;
+}
+
+.video-card video {
+    display: block;
+    width: 100%;
+    aspect-ratio: .75 / 1;
+    object-fit: cover;
+    background: #f0f0ee;
+}
+
+.video-card h3 {
+    margin: 13px 0 0;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.product-section {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 80px 4.2% 76px;
+}
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 24px;
+    margin-bottom: 27px;
+}
+
+.section-heading .text-link {
+    margin-bottom: 4px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--ink);
+}
+
+.section-heading h2 {
+    margin-top: 8px;
+    font-size: 40px;
+}
+
+.section-note {
+    margin-top: 9px;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 14px;
+}
+
+.product-card {
+    min-width: 0;
+}
+
+.product-image {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    aspect-ratio: .76 / 1;
+    background: #f0f0ee;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .45s cubic-bezier(.2, .7, .25, 1);
+}
+
+.product-image:hover img {
+    transform: scale(1.04);
+}
+
+.discount {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    padding: 7px 9px;
+    color: #fff;
+    background: var(--red);
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: .4px;
+}
+
+.product-name {
+    display: block;
+    overflow: hidden;
+    margin-top: 14px;
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 1.4;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.price {
+    margin: 7px 0 0;
+    color: var(--red);
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.price del {
+    margin-right: 6px;
+    color: #9a9a98;
+    font-size: 11px;
+    font-weight: 400;
+}
+
+.best-sellers {
+    padding-top: 26px;
+}
+
+.wide-campaign {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    aspect-ratio: 3.15 / 1;
+    margin: 4px 4.2% 0;
+    color: #fff;
+    background: #333;
+}
+
+.wide-campaign::after {
+    position: absolute;
+    inset: 0;
+    content: "";
+    background: linear-gradient(90deg, rgba(0, 0, 0, .56), transparent 65%);
+}
+
+.wide-campaign img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .55s cubic-bezier(.2, .7, .25, 1);
+}
+
+.wide-copy {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 7%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    transform: translateY(-50%);
+}
+
+.wide-copy strong {
+    margin-top: 12px;
+    font-family: var(--display);
+    font-size: 48px;
+    font-weight: 400;
+    line-height: .95;
+}
+
+.wide-copy .button {
+    margin-top: 21px;
+}
+
+.service-strip {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+    padding: 35px 5%;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+}
+
+.service-strip > div {
+    position: relative;
+    min-height: 65px;
+    padding-left: 43px;
+}
+
+.service-icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: grid;
+    width: 30px;
+    height: 30px;
+    place-items: center;
+    border: 1px solid #cfcfcb;
+    border-radius: 50%;
+    font-size: 15px;
+}
+
+.service-strip h3 {
+    margin: 2px 0 7px;
+    font-size: 10px;
+    letter-spacing: .35px;
+}
+
+.service-strip p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+.site-footer {
+    padding: 52px 5% 20px;
+    color: #fff;
+    background: #171717;
+}
+
+.footer-main {
+    display: grid;
+    grid-template-columns: 1.7fr 1fr 1fr 1fr;
+    gap: 42px;
+    max-width: 1500px;
+    margin: 0 auto 44px;
+}
+
+.footer-mark {
+    display: block;
+    font-size: 31px;
+}
+
+.footer-signup > p {
+    max-width: 310px;
+    margin: 22px 0 20px;
+    color: #bcbcb9;
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+.footer-signup form {
+    display: flex;
+    max-width: 330px;
+    height: 42px;
+    border-bottom: 1px solid #777;
+}
+
+.footer-signup input {
+    width: 100%;
+    min-width: 0;
+    border: 0;
+    outline: 0;
+    color: #fff;
+    background: transparent;
+    font-size: 12px;
+}
+
+.footer-signup input::placeholder {
+    color: #aaa;
+}
+
+.footer-signup button {
+    width: 42px;
+    border: 0;
+    color: #fff;
+    background: transparent;
+    cursor: pointer;
+    font-size: 21px;
+}
+
+.footer-column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.footer-column h2 {
+    margin: 3px 0 8px;
+    font-size: 10px;
+    letter-spacing: 1px;
+}
+
+.footer-column a {
+    color: #bcbcb9;
+    font-size: 11px;
+    transition: color .18s ease;
+}
+
+.footer-column a:hover {
+    color: #fff;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding-top: 19px;
+    border-top: 1px solid #414141;
+    color: #a4a4a1;
+    font-size: 9px;
+    letter-spacing: .7px;
+}
+
+/* Tablet layout changes. */
+@media (max-width: 900px) {
+    .site-header {
+        grid-template-columns: 1fr minmax(180px, 280px) 1fr;
+        gap: 16px;
+        padding-right: 3%;
+        padding-left: 3%;
+    }
+
+    .main-nav {
+        justify-content: flex-start;
+        gap: 30px;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    .campaign-grid {
+        padding-right: 3%;
+        padding-left: 3%;
+    }
+
+    .video-section {
+        padding-right: 3%;
+        padding-left: 3%;
+    }
+
+    .product-section {
+        padding-right: 3%;
+        padding-left: 3%;
+    }
+
+    .wide-campaign {
+        margin-right: 3%;
+        margin-left: 3%;
+    }
+
+    .product-grid {
+        gap: 11px;
+    }
+
+    .service-strip {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        row-gap: 26px;
+    }
+
+    .footer-main {
+        grid-template-columns: 1.5fr 1fr 1fr;
+        gap: 32px;
+    }
+
+    .footer-signup {
+        grid-column: 1 / -1;
+    }
+}
+
+/* Mobile layout changes. */
+@media (max-width: 680px) {
+    .announcement {
+        height: 27px;
+    }
+
+    .announcement-track span {
+        padding: 0 20px;
+        font-size: 9px;
+    }
+
+    .site-header {
+        min-height: 67px;
+        grid-template-columns: 1fr auto;
+        gap: 12px;
+        padding: 10px 16px;
+    }
+
+    .wordmark {
+        font-size: 24px;
+    }
+
+    .wordmark span {
+        font-size: 8px;
+    }
+
+    .search {
+        display: none;
+    }
+
+    .header-actions {
+        gap: 18px;
+    }
+
+    .header-actions a {
+        font-size: 21px;
+    }
+
+    .main-nav {
+        min-height: 40px;
+        gap: 25px;
+        padding: 0 16px;
+    }
+
+    .main-nav a {
+        font-size: 9px;
+    }
+
+    .hero {
+        min-height: 0;
+        aspect-ratio: .68 / 1;
+    }
+
+    .hero-media img {
+        object-position: center 37%;
+    }
+
+    .hero::after {
+        inset: 35% 0 0;
+        background: linear-gradient(0deg, rgba(0, 0, 0, .64), transparent 85%);
+    }
+
+    .hero-copy {
+        left: 6%;
+        bottom: 7%;
+    }
+
+    .hero-copy strong {
+        font-size: 52px;
+    }
+
+    .hero-tagline {
+        font-size: 9px;
+    }
+
+    .button {
+        min-height: 40px;
+        padding: 0 16px;
+        font-size: 9px;
+    }
+
+    .feature-intro {
+        padding: 49px 20px 25px;
+    }
+
+    .feature-intro h1 {
+        max-width: 300px;
+        margin: 10px auto 8px;
+        font-size: 32px;
+        line-height: 1.03;
+    }
+
+    .feature-intro > p:last-child {
+        font-size: 12px;
+    }
+
+    .campaign-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        padding: 0 14px;
+    }
+
+    .campaign {
+        aspect-ratio: 1.18 / 1;
+    }
+
+    .video-section {
+        padding: 53px 14px 0;
+    }
+
+    .video-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px 9px;
+    }
+
+    .video-card h3 {
+        margin-top: 10px;
+        font-size: 9px;
+    }
+
+    .campaign-copy strong {
+        font-size: 38px;
+    }
+
+    .product-section {
+        padding: 53px 14px 49px;
+    }
+
+    .section-heading {
+        align-items: flex-end;
+        gap: 8px;
+        margin-bottom: 20px;
+    }
+
+    .section-heading h2 {
+        font-size: 33px;
+    }
+
+    .section-heading .eyebrow {
+        font-size: 8px;
+        letter-spacing: 1.5px;
+    }
+
+    .section-note {
+        max-width: 205px;
+        font-size: 11px;
+        line-height: 1.4;
+    }
+
+    .section-heading .text-link {
+        gap: 4px;
+        margin-bottom: 2px;
+        font-size: 8px;
+        white-space: nowrap;
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 25px 9px;
+    }
+
+    .product-image {
+        aspect-ratio: .72 / 1;
+    }
+
+    .discount {
+        top: 8px;
+        left: 8px;
+        padding: 6px 7px;
+        font-size: 8px;
+    }
+
+    .product-name {
+        margin-top: 10px;
+        font-size: 9px;
+    }
+
+    .price {
+        margin-top: 6px;
+        font-size: 12px;
+    }
+
+    .price del {
+        font-size: 10px;
+    }
+
+    .wide-campaign {
+        aspect-ratio: .92 / 1;
+        margin: 0 14px;
+    }
+
+    .wide-campaign img {
+        object-position: 58% center;
+    }
+
+    .wide-campaign::after {
+        background: linear-gradient(0deg, rgba(0, 0, 0, .62), transparent 85%);
+    }
+
+    .wide-copy {
+        top: auto;
+        bottom: 7%;
+        left: 7%;
+        transform: none;
+    }
+
+    .wide-copy strong {
+        font-size: 42px;
+    }
+
+    .best-sellers {
+        padding-top: 49px;
+    }
+
+    .service-strip {
+        gap: 22px 10px;
+        padding: 27px 17px;
+    }
+
+    .service-strip > div {
+        min-height: 58px;
+        padding-left: 35px;
+    }
+
+    .service-icon {
+        width: 26px;
+        height: 26px;
+        font-size: 13px;
+    }
+
+    .service-strip h3 {
+        font-size: 8px;
+    }
+
+    .service-strip p {
+        font-size: 9px;
+    }
+
+    .site-footer {
+        padding: 40px 18px 18px;
+    }
+
+    .footer-main {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 30px 20px;
+    }
+
+    .footer-signup {
+        grid-column: 1 / -1;
+    }
+
+    .footer-signup > p {
+        margin: 17px 0 14px;
+    }
+
+    .footer-column {
+        gap: 10px;
+    }
+
+    .footer-column h2 {
+        margin-bottom: 5px;
+        font-size: 9px;
+    }
+
+    .footer-column a {
+        font-size: 10px;
+    }
+
+    .footer-bottom {
+        flex-wrap: wrap;
+        gap: 12px;
+        font-size: 8px;
+    }
+
+    .footer-bottom span:nth-child(2) {
+        display: none;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+    }
+}
